@@ -1,0 +1,9 @@
+{
+  "name": "bitbucket-private-npm",
+  "version": "1.0.0",
+  "description": "Creates node modules to call from git hooks to allow the usage of private npm modules\"",
+  "main": "index.js",
+  "repository": "https://dontmesswithabeer@bitbucket.org/flightfutures/bitbucket-private-npm.git",
+  "author": "Daniel Yakobian",
+  "license": "MIT"
+}
