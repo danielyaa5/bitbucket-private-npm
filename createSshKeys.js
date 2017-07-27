@@ -1,13 +1,10 @@
 'use strict';
 
-const {exec} = require('child_process');
 const {resolve} = require('path');
+const runScript = require('./runScript');
 
-const sh = exec(resolve(__dirname, 'scripts/createSshKeys.sh'), {stdio: 'inherit'});
-sh.on('exit', function (code) {
-    process.exit(code);
-});
+function createSshKeys() {
+    runScript(resolve(__dirname, 'scripts/createSshKeys.sh'));
+}
 
-sh.stdout.pipe(process.stdout);
-sh.stderr.pipe(process.stderr);
-process.stdin.pipe(sh.stdin)
+module.exports = createSshKeys;
