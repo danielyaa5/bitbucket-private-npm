@@ -1,5 +1,7 @@
 'use strict';
 
+const {exec} = require('child_process');
+
 function runScript(scriptPath) {
     const sh = exec(scriptPath);
     sh.on('exit', function (code) {
