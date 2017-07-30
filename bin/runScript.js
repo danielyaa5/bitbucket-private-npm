@@ -6,9 +6,9 @@ var _require = require('child_process'),
 var _require2 = require('path'),
     resolve = _require2.resolve;
 
-function runScript(scriptPath) {
+function runScript(scriptPath, projectName) {
   var shOpts = { cwd: resolve(__dirname, 'scripts') };
-  var sh = exec('bash ' + scriptPath, shOpts);
+  var sh = exec('bash ' + scriptPath + ' ' + projectName, shOpts);
   sh.on('exit', function (code) {
     process.exit(code);
   });
