@@ -2,8 +2,15 @@
   "name": "bitbucket-private-npm",
   "version": "1.0.0",
   "description": "Creates node modules to call from git hooks to allow the usage of private npm modules\"",
-  "main": "index.js",
-  "repository": "https://dontmesswithabeer@bitbucket.org/flightfutures/bitbucket-private-npm.git",
+  "main": "./bin/index.js",
+  "repository": "https://github.com/danielyaa5/bitbucket-private-npm",
   "author": "Daniel Yakobian",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0"
+  },
+  "scripts": {
+    "prepublish": "babel app -d bin"
+  }
 }
