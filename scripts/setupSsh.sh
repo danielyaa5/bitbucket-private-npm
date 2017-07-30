@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "Setting up ssh for private modules..."
 
 if [ -f ~/.ssh/flightfutures-bitbucket ]; then
+  echo "Setting up ssh for private modules..."
 
   if [ -f ~/.ssh/config ]; then
     cat ~/.ssh/config > ~/.ssh/config_temp
@@ -17,5 +17,6 @@ if [ -f ~/.ssh/flightfutures-bitbucket ]; then
           " StrictHostKeyChecking no"\
           > ~/.ssh/config
 else
+    echo "No SSH keys for bitbucket found let's create some..."
     bash ./createSshKeys.sh
 fi
