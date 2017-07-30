@@ -1,6 +1,6 @@
 {
   "name": "bitbucket-private-npm",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Creates node modules to call from git hooks to allow the usage of private npm modules\"",
   "main": "./bin/index.js",
   "repository": "https://github.com/danielyaa5/bitbucket-private-npm",
