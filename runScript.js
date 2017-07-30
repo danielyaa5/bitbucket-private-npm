@@ -1,16 +1,20 @@
 'use strict';
 
 const {exec} = require('child_process');
+const {resolve} = require('path');
 
 function runScript(scriptPath) {
-    const sh = exec(scriptPath);
-    sh.on('exit', function (code) {
-        process.exit(code);
-    });
+  console.log(scriptPath);
 
-    sh.stdout.pipe(process.stdout);
-    sh.stderr.pipe(process.stderr);
-    process.stdin.pipe(sh.stdin);
+  const shOpts = { cwd: resolve(__dirname, 'scripts') };
+  const sh = exec('bash ' + scriptPath, shOpts);
+  sh.on('exit', function (code) {
+    process.exit(code);
+  });
+
+  sh.stdout.pipe(process.stdout);
+  sh.stderr.pipe(process.stderr);
+  process.stdin.pipe(sh.stdin);
 }
 
 module.exports = runScript;
