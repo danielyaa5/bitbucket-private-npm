@@ -4,8 +4,6 @@ const {exec} = require('child_process');
 const {resolve} = require('path');
 
 function runScript(scriptPath) {
-  console.log(scriptPath);
-
   const shOpts = { cwd: resolve(__dirname, 'scripts') };
   const sh = exec('bash ' + scriptPath, shOpts);
   sh.on('exit', function (code) {
