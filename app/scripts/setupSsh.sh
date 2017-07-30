@@ -1,7 +1,8 @@
 #!/bin/bash
 
-
-if [ -f ~/.ssh/flightfutures-bitbucket ]; then
+ssh_root=~/.ssh
+ssh_file="$ssh_root/$1-bitbucket"
+if [ -f $ssh_file ]; then
   echo "Setting up ssh for private modules..."
 
   if [ -f ~/.ssh/config ]; then

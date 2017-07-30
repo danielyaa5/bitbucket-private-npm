@@ -1,9 +1,14 @@
 #!/bin/bash
-echo "Cleaning up SSH config..." >&1
 echo "" >&1
 
-if [ ! -f ~/.ssh/flightfutures-bitbucket ]; then
+ssh_root=~/.ssh
+ssh_file="$ssh_root/$1-bitbucket"
+if [ ! -f $ssh_file ]; then
+    echo "No bitbucket ssh keys found for project, $1, let's create some..."
+    echo ""
     bash ./createSshKeys.sh
+else
+    echo "Cleaning up SSH config..." >&1
 fi
 
 # Now that npm has finished running,
@@ -16,4 +21,3 @@ else
 fi
 
 rm -f ~/.ssh/config_temp
-

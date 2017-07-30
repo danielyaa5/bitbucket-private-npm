@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-ssh_key=~/.ssh/flightfutures-bitbucket
-ssh_key_pub=~/.ssh/flightfutures-bitbucket.pub
+ssh_root=~/.ssh
+ssh_file="$ssh_root/$1-bitbucket"
+ssh_file_pub=~/.ssh/flightfutures-bitbucket.pub
 
-if [ -f $ssh_key ]; then
+if [ -f $ssh_file ]; then
     echo "You already have flightfutures-bitbucket key in ~/.ssh folder"
 else
     # Ensure we have the ssh folder
@@ -15,9 +16,9 @@ else
     echo "Enter the email associated with you bitbucket account"
     read email
     # Create keys in ~/.ssh and pipe printf to cancel passphrase prompt
-    printf "" | ssh-keygen -C $email -f $ssh_key
+    printf "" | ssh-keygen -C $email -f $ssh_file
     # Copy pub key to clipboard
-    cat $ssh_key_pub | pbcopy
+    cat $ssh_file_pub | pbcopy
 
     open https://bitbucket.org/flightfutures/flightfutures-config/admin/access-keys/ || :
 
