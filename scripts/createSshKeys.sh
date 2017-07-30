@@ -19,6 +19,8 @@ else
     # Copy pub key to clipboard
     cat $ssh_key_pub | pbcopy
 
+    open https://bitbucket.org/flightfutures/flightfutures-config/admin/access-keys/ || :
+
     echo "\n\n
     flightfutures-bitbucket keys created in .ssh folder,
     now go to https://bitbucket.org/flightfutures/flightfutures-config/admin/access-keys/,
