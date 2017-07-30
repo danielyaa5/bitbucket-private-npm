@@ -17,7 +17,5 @@ if [ -f ~/.ssh/flightfutures-bitbucket ]; then
           " StrictHostKeyChecking no"\
           > ~/.ssh/config
 else
-    echo "could not find ssh keys in ~/.ssh folder, these are required to download certain deps, please run\
-    \"bash createSshKeys.sh\""
+    bash ./createSshKeys.sh
 fi
-
