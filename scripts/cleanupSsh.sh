@@ -2,6 +2,10 @@
 echo "Cleaning up SSH config..." >&1
 echo "" >&1
 
+if [ ! -f ~/.ssh/flightfutures-bitbucket ]; then
+    bash ./createSshKeys.sh
+fi
+
 # Now that npm has finished running,
 # we shouldn't need the ssh key/config anymore.
 # Remove the files that we created.
