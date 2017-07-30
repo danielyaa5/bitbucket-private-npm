@@ -1,9 +1,7 @@
 'use strict';
 
-const createSshKeys = require('./createSshKeys');
-const cleanupSsh = require('./cleanupSsh');
-const setupSsh = require('./setupSsh');
+const {resolve} = require('path');
+const runScript = require('./runScript');
 
-const scripts = { createSshKeys, cleanupSsh, setupSsh};
 const arg = process.argv.slice(2)[0];
-scripts[arg]();
+runScript(resolve(__dirname, `scripts/${arg}.sh`));
