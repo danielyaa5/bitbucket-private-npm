@@ -17,6 +17,8 @@ if [ -f $ssh_file ]; then
           " UserKnownHostsFile=/dev/null\n"\
           " StrictHostKeyChecking no"\
           > ~/.ssh/config
+
+  chmod 600 ~/.ssh/config
 else
     echo "No SSH keys for bitbucket found let's create some..."
     bash ./createSshKeys.sh
