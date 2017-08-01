@@ -8,7 +8,7 @@ function listBashFiles(p) {
 }
 
 function setExecutable() {
-  const scriptsPath = `${__dirname}/bin/scripts`;
+  const scriptsPath = `${__dirname}/app/scripts`;
   const bashFiles = listBashFiles(scriptsPath);
   for (let file of bashFiles) {
     const filePath = `${scriptsPath}/${file}`;
