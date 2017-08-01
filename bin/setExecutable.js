@@ -11,7 +11,7 @@ function listBashFiles(p) {
 }
 
 function setExecutable() {
-  var scriptsPath = __dirname + '/scripts';
+  var scriptsPath = __dirname + '/app/scripts';
   var bashFiles = listBashFiles(scriptsPath);
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
